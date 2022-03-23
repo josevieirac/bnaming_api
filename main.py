@@ -1,13 +1,38 @@
-"""
-Arquivo main principal, onde importa todas as rotas e executa o server.
+# Importando as bibliotecas e arquivos
+from flask import Flask, request, jsonify
+from flask_restx import Api, Resource
 
-Toda rota criada deverá ser importada aqui nesse código.
-"""
+# Instannciando nossa API
+app = Flask(__name__)
+api = Api(app,
+        version = '1.0',
+        title = 'bNaming API',
+        description = 'Api de um sistema para auxiliara a avaliar a qualidade de um nome de uma marca.',
+        doc = '/docs'
+        )
 
-from src.server.server import server
-from src.routes.evaluation_route import *
+# Definindo nossas rotas
 
+# Rotas de avaliação
+@api.route('/evaluation')
+class Evaluation(Resource):
+
+    def get(self,):
+        print("Entrou no GET")
+        return jsonify({"Messagem":"Utilize o método POST e envie o nome e o segmento para que possamos realizar a avaliação do nome."})
+
+    def post(self,):
+        dados = request.json
+
+        nome = dados['nome']
+        segmento = dados['segmento']
+
+        print("VEIO ISSO:", dados)
+        print("O nome é: ", nome)
+        print("O segmento é: ", segmento)
+        return jsonify(dados)
+
+# Executando nossa API
 if __name__ == '__main__':
-    app = server.app
-    server.run(debug=True,host="0.0.0.0")
+    app.run(debug=True, host="0.0.0.0")
 
