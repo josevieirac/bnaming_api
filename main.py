@@ -19,7 +19,7 @@ class Evaluation(Resource):
 
     def get(self,):
         print("Entrou no GET")
-        return jsonify({"Messagem":"Utilize o método POST e envie o nome e o segmento para que possamos realizar a avaliação do nome."})
+        return jsonify({"Messagem":"Utilize o metodo POST e envie o nome e o segmento em um JSON para que possamos realizar a avaliacao do nome."})
 
     def post(self,):
         dados = request.json
