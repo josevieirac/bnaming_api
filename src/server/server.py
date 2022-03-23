@@ -5,7 +5,7 @@ Estudar como melhor configurar esse servidor
 """
 
 from logging import debug
-from flask import Flask
+from flask import Flask, request
 from flask_restx import Api
 
 class Server():
@@ -19,7 +19,10 @@ class Server():
                         doc = '/docs'
                         )
 
-    def run(self,):
-        self.app.run(debug=True)
+    def run(self,debug = False, port = 5000, host=None):
+        if host != None:
+            self.app.run(debug=debug, port=port, host=host)
+        else:
+            self.app.run(debug=debug, port=port, host=host)
 
 server = Server()

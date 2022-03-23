@@ -2,7 +2,7 @@
 Código de definição de rotas, para novas rotas utilizar esse código como template
 """
 
-from src.server.server import server
+from src.server.server import *
 from flask_restx import Resource
 
 api = server.api
@@ -11,4 +11,15 @@ api = server.api
 class Evaluation(Resource):
 
     def get(self,):
-        return "Avaliar nome"
+        return "Utilize o método POST e envie o nome e o segmento para que possamos realizar a avaliação do nome."
+
+    def post(self,):
+        dados = request.json
+
+        nome = dados['nome']
+        segmento = dados['segmento']
+
+        print("VEIO ISSO:", dados)
+        print("O nome é: ", nome)
+        print("O segmento é: ", segmento)
+        return dados
