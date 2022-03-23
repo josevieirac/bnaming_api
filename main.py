@@ -8,5 +8,6 @@ from src.server.server import server
 from src.routes.evaluation_route import *
 
 if __name__ == '__main__':
+    app = server.app
     server.run(debug=True,host="0.0.0.0")
 
