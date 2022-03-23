@@ -5,7 +5,7 @@ Estudar como melhor configurar esse servidor
 """
 
 from logging import debug
-from flask import Flask, request
+from flask import Flask, request, jsonify
 from flask_restx import Api
 
 class Server():

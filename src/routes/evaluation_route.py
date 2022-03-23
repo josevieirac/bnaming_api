@@ -11,7 +11,8 @@ api = server.api
 class Evaluation(Resource):
 
     def get(self,):
-        return "Utilize o método POST e envie o nome e o segmento para que possamos realizar a avaliação do nome."
+        print("Entrou no GET")
+        return jsonify({"Messagem":"Utilize o método POST e envie o nome e o segmento para que possamos realizar a avaliação do nome."})
 
     def post(self,):
         dados = request.json
@@ -22,4 +23,4 @@ class Evaluation(Resource):
         print("VEIO ISSO:", dados)
         print("O nome é: ", nome)
         print("O segmento é: ", segmento)
-        return dados
+        return jsonify(dados)
