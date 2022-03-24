@@ -14,11 +14,14 @@ Há uma rota disponível para 2 métodos HTTP, a rota é ‘/evaluation’.
 -> Para o método GET ela retorna a seguinte mensagem: “Utilize o metodo POST e envie o nome e o segmento em um JSON para que possamos realizar a avaliacao do nome.”
 
 -> Para utilizar o método POST deve passar um JSON no request com o seguinte formato:
+    
     {
-        "nome": <nome_para_ser_avaliado>,
-        "segmento":<segmento_do_nome_para_ser_avaliado>,
+        "nome" : <nome_para_ser_avaliado>,
+        "segmento" : <segmento_do_nome_para_ser_avaliado>,
     }
+    
 Os segmentos disponíveis são:
+
     - alimentos/bebidas
     - automotivo
     - bens de consumo
