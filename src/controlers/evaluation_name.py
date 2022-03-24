@@ -2,7 +2,7 @@ import json
 import tensorflow as tf
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 
-from models.rede_neural_classificacao import *
+from src.models.rede_neural_classificacao import *
 
 # Carregando dados bases
 with open('dados/variaveis.json', 'r', encoding='utf8') as f:
